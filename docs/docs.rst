@@ -250,3 +250,21 @@ responsive behaviour inside an IFRAME tag.
 Inside the admin pages for each survey, survey version and answer group you
 will find a "Show Links" action.  This will show a page that gives examples of
 how to include the URLs for the selected survey with and without embedding.
+
+X-Frame-Options
+===============
+
+For security reasons, some web servers add a "X-Frame-Options" header to the
+HTTP request that restricts who can load an iframe in order to prevent cross
+site scripting attacks.  If you are using DForm in iframe mode, you may need
+to turn this off.
+
+For Apache you can add the following directive to your configuration:
+
+
+.. code-block:: 
+
+    LoadModule headers_module    modules/mod_headers.so
+    Header unset X-Frame-Options
+
+Similar directives exist for other servers as well.

@@ -1,3 +1,8 @@
+0.9.0
+=====
+
+* added documentation on Apache X-Frame-Options header
+
 0.8.1
 =====
 
