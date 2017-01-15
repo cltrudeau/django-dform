@@ -219,25 +219,6 @@ parameter: the :class:`.SurveyForm` that was just saved.
         print('It had %d answers' % num)
 
 
-Google reCAPTCHA
-================
-
-DForm supports the use of Google's `reCAPTCHA 
-<https://www.google.com/recaptcha/>`_  to help prevent robot submissions.  Two
-things need to be done, first you must define your key in settings:
-
-**settings.py**
-
-.. code-block:: python
-
-        DFORM_RECAPTCHA_KEY = 'asdf'
-
-
-Second, for each :class:`.Survey` object you need to turn it on by setting
-``use_recaptcha`` to ``True``.  This can be done in the admin or through the
-Survey Edit screen.
-
-
 Using DForm in IFRAMEs
 **********************
 

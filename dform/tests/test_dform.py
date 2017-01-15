@@ -324,25 +324,6 @@ class SurveyTests(TestCase):
             version.success_redirect = '/three/'
             self.assertEqual('/three/', version.on_success())
 
-    def test_recaptcha(self):
-        survey = Survey.factory(name='test')
-        url = '/dform/survey/%s/%s/' % (survey.latest_version.id, survey.token)
-
-        with self.settings(DFORM_RECAPTCHA_KEY='this_is_a_key'):
-            # make sure the recaptcha pieces didn't show up
-            response = self.client.get(url)
-            content = response.content.decode('utf-8')
-            self.assertNotIn('recaptcha', content)
-
-            # test again with recaptcha enabled
-            survey.use_recaptcha = True
-            survey.save()
-            response = self.client.get(url)
-            content = response.content.decode('utf-8')
-            self.assertIn('recaptcha/api.js', content)
-            self.assertIn('g-recaptcha', content)
-            self.assertIn('this_is_a_key', content)
-
 
 def fake_reverse(name, args):
     if name in ['dform-sample-survey', 'dform-survey',
@@ -718,7 +699,6 @@ class SurveyAdminViewTests(TestCase, AdminToolsMixin):
         # -- create a new survey
         expected = {
             'name':'New Survey',
-            'recaptcha':False,
             'redirect_url':'http://localhost/',
             'questions':[{
                 'id':0,
