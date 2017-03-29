@@ -93,6 +93,16 @@ body {
             <span class="help-block"></span>
           </div>
         </div>
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-9">
+            <div class="checkbox">
+              <label>
+                <input id="show_title" type="checkbox"/> Show survey name as a 
+                  title
+              </label>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -462,6 +472,7 @@ function register_done_actions() {
     var delta = {
       name:$('#name').val(),
       redirect_url:$('#redirect_url').val(),
+      show_title:$('#show_title').is(':checked'),
       questions:[],
       remove:remove_list,
     };
@@ -538,6 +549,7 @@ function register_done_actions() {
 $(function() {
   $('#name').val(data['name']);
   $('#redirect_url').val(data['redirect_url']);
+  $('#show_title').prop('checked', data['show_title']);
 
   register_add_actions();
   register_remove_actions();

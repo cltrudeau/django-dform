@@ -52,6 +52,7 @@ class Survey(TimeTrackModel):
     name = models.CharField(max_length=50)
     token = models.CharField(max_length=40)
     success_redirect = models.TextField()
+    show_title = models.BooleanField(default=True)
 
     def __str__(self):
         return 'Survey(id=%s %s)' % (self.id, self.name)
@@ -397,6 +398,7 @@ class SurveyVersion(TimeTrackModel):
             'name':self.survey.name,
             'redirect_url':self.survey.success_redirect,
             'questions':questions,
+            'show_title':self.survey.show_title,
         }
 
         return data
@@ -441,6 +443,9 @@ class SurveyVersion(TimeTrackModel):
                 errors['redirect_url'] = ('invalid URL; only fully qualified '
                     'URLs are supported')
 
+        show_title = data.get('show_title', False)
+        self.survey.show_title = show_title
+        
         if errors:
             raise ValidationError('Survey Validation Failed', params=errors)
         else:
@@ -510,8 +515,8 @@ class Question(TimeTrackModel):
     required = models.BooleanField(default=False)
 
     def __str__(self):
-        return 'Question(id=%s %s:%s)' % (self.id, self.field_key,
-            self.short_text)
+        return 'Question(id=%s Survey=%s %s:%s)' % (self.id, self.survey.id,
+           self.field_key, self.short_text)
 
     @property
     def field(self):

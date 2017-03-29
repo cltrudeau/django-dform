@@ -14,7 +14,7 @@
 htmlcov/
 foo.py
 debug.log
-*.ini
+#*.ini
 db.sqlite3
 logs/*
 *.egg

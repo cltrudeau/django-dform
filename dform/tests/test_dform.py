@@ -267,6 +267,7 @@ class SurveyTests(TestCase):
         delta = {
             'name':expected['name'],
             'redirect_url':expected['redirect_url'],
+            'show_title':expected['show_title'],
             'remove':[expected['questions'][0]['id'], ]
         }
         survey.replace_from_dict(delta)
@@ -700,6 +701,7 @@ class SurveyAdminViewTests(TestCase, AdminToolsMixin):
         expected = {
             'name':'New Survey',
             'redirect_url':'http://localhost/',
+            'show_title':True,
             'questions':[{
                 'id':0,
                 'field_key':Dropdown.field_key,

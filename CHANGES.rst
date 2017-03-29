@@ -1,7 +1,19 @@
+0.9.1
+=====
+
+* fixed bug where the Survey Show Title check box changes weren't saved
+
 0.9.0
 =====
 
+* changed supported versions: Python 3.6, 3.5, 2.7; Django 1.9, 1.10
 * added documentation on Apache X-Frame-Options header
+* removed reCAPTCHA capabilities: was very broken, will likely integrate with
+    another library in the future to provide this feature
+* add "show_title" option so the survey name can be hidden from the survey
+    form when it is displayed
+* changed display string for Question to include a reference to the Survey,
+    makes it easier to pick the right one in the django admin
 
 0.8.1
 =====

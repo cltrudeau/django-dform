@@ -41,7 +41,7 @@ def _questions_link(version, show_reorder=True):
 
 @admin.register(Survey)
 class SurveyAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'version_num', 'show_actions',
+    list_display = ('id', 'name', 'version_num', 'show_title', 'show_actions',
         'show_versions', 'show_questions', 'show_answers')
 
     def version_num(self, obj):
