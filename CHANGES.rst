@@ -1,3 +1,8 @@
+0.9.2
+=====
+
+* bug fixes for the bug fixes, some of the last commit didn't get included 
+
 0.9.1
 =====
 

@@ -243,7 +243,7 @@ to turn this off.
 For Apache you can add the following directive to your configuration:
 
 
-.. code-block:: 
+.. code-block:: apache
 
     LoadModule headers_module    modules/mod_headers.so
     Header unset X-Frame-Options
