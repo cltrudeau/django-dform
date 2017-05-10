@@ -1,3 +1,8 @@
+0.9.3
+=====
+
+* bug in template referencing the wrong object, so titles didn't show properly
+
 0.9.2
 =====
 
