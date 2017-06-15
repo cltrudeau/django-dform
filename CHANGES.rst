@@ -1,3 +1,10 @@
+0.9.4
+=====
+
+* changed iframe embedded submission to use target="_parent"
+* /embed/ test url was using a hard coded token that no longer worked, now
+just uses the first survey in the db
+
 0.9.3
 =====
 

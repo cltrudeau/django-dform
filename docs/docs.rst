@@ -232,6 +232,10 @@ Inside the admin pages for each survey, survey version and answer group you
 will find a "Show Links" action.  This will show a page that gives examples of
 how to include the URLs for the selected survey with and without embedding.
 
+For now, any DForm survey submitted from within an iframe will have a target
+of parent, sending the user to the redirect page overridding the iframe the
+survey is within.
+
 X-Frame-Options
 ===============
 
