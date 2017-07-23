@@ -10,6 +10,7 @@ from django.core.urlresolvers import reverse
 from django.http import JsonResponse, HttpResponseRedirect, Http404
 from django.shortcuts import get_object_or_404, render
 from django.template import Context, Template
+from django.views.decorators.csrf import csrf_exempt
 
 from awl.decorators import post_required
 from wrench.utils import dynamic_load
@@ -235,6 +236,7 @@ def survey(request, survey_version_id, token):
 
 
 @permission_hook
+@csrf_exempt
 def embedded_survey(request, survey_version_id, token):
     """View for submitting the answers to a survey version with additional
     Javascript handling for being embedded in an iframe.
@@ -257,6 +259,7 @@ def survey_latest(request, survey_id, token):
 
 
 @permission_hook
+@csrf_exempt
 def embedded_survey_latest(request, survey_id, token):
     """View for submitting the answers to the latest version of a survey with 
     additional Javascript handling for being embedded in an iframe.
@@ -335,6 +338,7 @@ def survey_with_answers(request, survey_version_id, survey_token,
 
 
 @permission_hook
+@csrf_exempt
 def embedded_survey_with_answers(request, survey_version_id, survey_token, 
         answer_group_id, answer_token):
     """View for viewing and changing the answers to a survey that already has

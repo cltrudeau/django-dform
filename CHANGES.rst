@@ -1,3 +1,9 @@
+0.9.5
+=====
+
+* Safari's default cookie policy disallows cross site cookies, changed survey
+submits to be csrf_exempt
+
 0.9.4
 =====
 
