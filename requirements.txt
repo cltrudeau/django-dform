@@ -1,7 +1,7 @@
 # These requirements are for running tests and the sample_site, the library 
 # itself only needs a subset, see setup.py for that list
 coverage==4.2
-Django==1.10
+Django==1.11.29
 django-awl==0.13
 jsonfield==1.0.3
 mock==2.0.0
