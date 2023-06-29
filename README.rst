@@ -1,3 +1,8 @@
+ARCHIVED
+********
+
+This project is no longer actively maintained. Feel free to take whatever is of value to you.
+
 django-dform
 ************
 
@@ -54,8 +59,3 @@ in ``extras/sample_site``
     $ pip install -r requirements.txt
     $ ./resetdb.sh
     $ ./runserver.sh
-
-Docs
-====
-
-Docs available at: http://django-dform.readthedocs.io/en/latest/
